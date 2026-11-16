@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amit Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Liquid shader background -->
+<canvas id="liquid" aria-hidden="true"></canvas>
+
+<div class="wrap">
+  <nav>
+    <div class="nav-left">
+      <div class="brand">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="g0" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8b5cf6"/>
+              <stop offset="1" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+          <rect x="10" y="10" width="100" height="100" rx="30" fill="url(#g0)"/>
+          <path d="M36 86 60 32 84 86M46 68h28" fill="none" stroke="#0a0a12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Amit Hub</span>
+      </div>
+
+      <div class="socials" aria-label="Social links">
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/8801873395984" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+
+        <!-- INSTAGRAM (replace URL with your real profile) -->
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+        </a>
+
+        <!-- GITHUB -->
+        <a href="https://github.com/Amit-hasan7" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+
+        <!-- REDDIT -->
+        <a href="https://www.reddit.com/user/Amit_hasan97/" target="_blank" rel="noopener" aria-label="Reddit" title="Reddit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="orb" aria-hidden="true">
+      <svg viewBox="0 0 120 120">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8b5cf6"/>
+            <stop offset="1" stop-color="#22d3ee"/>
+          </linearGradient>
+          <radialGradient id="g2">
+            <stop offset="0" stop-color="#c4b5fd"/>
+            <stop offset="1" stop-color="#8b5cf6"/>
+          </radialGradient>
+        </defs>
+        <circle class="ring" cx="60" cy="60" r="54" fill="none" stroke="url(#g1)" stroke-width="2" stroke-dasharray="40 24 8 24"/>
+        <circle class="ring2" cx="60" cy="60" r="42" fill="none" stroke="#22d3ee" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="4 10"/>
+        <circle class="core" cx="60" cy="60" r="24" fill="url(#g2)"/>
+        <path d="M52 48v24l22-12z" fill="#0a0a12"/>
+      </svg>
+    </div>
+    <h1>Welcome to<br><span>Amit Hub</span></h1>
+    <p>Your one place for sports, movies and anime. Pick a category and jump in.</p>
+    <label class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search links" aria-label="Search links" autocomplete="off">
+    </label>
+    <div class="tabs" role="group" aria-label="Filter by category">
+      <button class="tab" data-f="all" aria-pressed="true">All</button>
+      <button class="tab" data-f="sports" aria-pressed="false">Sports</button>
+      <button class="tab" data-f="movies" aria-pressed="false">Movies</button>
+      <button class="tab" data-f="anime" aria-pressed="false">Anime</button>
+    </div>
+  </header>
+
+  <main id="main"></main>
+  <p class="empty" id="empty">No links match your search.</p>
+  <footer>© <span id="yr"></span> Amit Hub</footer>
+</div>
+
+<script>
+var ICONS = {
+  sports:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6c3.5 3.5 3.5 9.3 0 12.8M18.4 5.6c-3.5 3.5-3.5 9.3 0 12.8"/></svg>',
+  movies:'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>',
+  anime:'<svg viewBox="0 0 24 24"><path d="m12 3 2.2 5.3L20 9l-4.3 3.9L17 19l-5-3-5 3 1.3-6.1L4 9l5.8-.7z"/></svg>'
+};
+
+var DATA = [
+  {
+    id:"sports",
+    title:"Sports",
+    color:"#fb7185",
+    items:[
+      {name:"StreamKing", url:"https://streamking.cx/"},
+      {name:"StreamEast", url:"https://streameast.cool"}
+    ]
+  },
+  {
+    id:"movies",
+    title:"Movies",
+    color:"#fbbf24",
+    items:[
+      {name:"1Tube", url:"https://www.1tube.org"},
+      {name:"RedFlix", url:"https://redflix.club"}
+    ]
+  },
+  {
+    id:"anime",
+    title:"Anime",
+    color:"#22d3ee",
+    items:[
+      {name:"Yenime", url:"https://yenime.net"},
+      {name:"Enma", url:"https://www.enma.lol/home"}
+    ]
+  }
+];
+
+var main = document.getElementById("main");
+DATA.forEach(function(c){
+  var s = document.createElement("section");
+  s.dataset.cat = c.id; s.style.setProperty("--c", c.color);
+  var h = '<h2><i></i>'+c.title+'</h2><div class="grid">';
+  c.items.forEach(function(it){
+    h += '<a class="card" href="'+it.url+'" target="_blank" rel="noopener" data-name="'+it.name.toLowerCase()+'">'
+      + '<div class="logo">'+ICONS[c.id]+'</div>'
+      + '<div class="meta"><b>'+it.name+'</b><small>'+it.url.replace(/^https?:\/\//,"")+'</small></div>'
+      + '<div class="go" aria-hidden="true">&#8599;</div></a>';
+  });
+  s.innerHTML = h + '</div>';
+  main.appendChild(s);
+});
+
+var filter = "all", q = document.getElementById("q");
+
+function apply(){
+  var term = q.value.trim().toLowerCase(), shown = 0;
+  document.querySelectorAll("section").forEach(function(s){
+    var inCat = filter === "all" || s.dataset.cat === filter, n = 0;
+    s.querySelectorAll(".card").forEach(function(a){
+      var ok = inCat && (!term || a.dataset.name.indexOf(term) > -1 || s.dataset.cat.indexOf(term) > -1);
+      a.style.display = ok ? "" : "none"; if(ok) n++;
+    });
+    s.style.display = n ? "" : "none"; shown += n;
+  });
+  document.getElementById("empty").style.display = shown ? "none" : "block";
+}
+
+document.querySelectorAll(".tab").forEach(function(b){
+  b.onclick = function(){
+    filter = b.dataset.f;
+    document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-pressed", t===b)});
+    apply();
+  };
+});
+
+q.addEventListener("input", apply);
+
+document.addEventListener("pointermove", function(e){
+  var c = e.target.closest && e.target.closest(".card"); if(!c) return;
+  var r = c.getBoundingClientRect();
+  c.style.setProperty("--mx", (e.clientX-r.left)+"px");
+  c.style.setProperty("--my", (e.clientY-r.top)+"px");
+});
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* ---------- Liquid shader background ---------- */
+(function(){
+  var canvas = document.getElementById("liquid");
+  if(!canvas) return;
+
+  var gl = canvas.getContext("webgl", {antialias:false, alpha:false, powerPreference:"low-power"})
+        || canvas.getContext("experimental-webgl");
+  if(!gl){ canvas.style.display = "none"; return; }
+
+  var vsSrc = [
+    "attribute vec2 a_pos;",
+    "void main(){ gl_Position = vec4(a_pos, 0.0, 1.0); }"
+  ].join("\n");
+
+  var fsSrc = [
+    "precision highp float;",
+    "uniform float u_time;",
+    "uniform vec2  u_res;",
+    "",
+    "float hash(vec2 p){",
+    "  p = fract(p * vec2(123.34, 456.21));",
+    "  p += dot(p, p + 45.32);",
+    "  return fract(p.x * p.y);",
+    "}",
+    "",
+    "float noise(vec2 p){",
+    "  vec2 i = floor(p);",
+    "  vec2 f = fract(p);",
+    "  vec2 u = f * f * (3.0 - 2.0 * f);",
+    "  return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x),",
+    "             mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y);",
+    "}",
+    "",
+    "float fbm(vec2 p){",
+    "  float v = 0.0;",
+    "  float a = 0.5;",
+    "  mat2 rot = mat2(0.8, 0.6, -0.6, 0.8);",
+    "  for(int i = 0; i < 4; i++){",
+    "    v += a * noise(p);",
+    "    p = rot * p * 2.0;",
+    "    a *= 0.5;",
+    "  }",
+    "  return v;",
+    "}",
+    "",
+    "void main(){",
+    "  vec2 uv = gl_FragCoord.xy / u_res;",
+    "  vec2 p  = uv * vec2(u_res.x / u_res.y, 1.0) * 2.2;",
+    "  float t = u_time * 0.16;",
+    "",
+    "  // Domain-warped FBM for liquid flow",
+    "  vec2 q = vec2(fbm(p + t), fbm(p + vec2(5.2, 1.3) + t * 0.8));",
+    "  vec2 r = vec2(fbm(p + 4.0 * q + vec2(1.7, 9.2) + t * 0.6),",
+    "                fbm(p + 4.0 * q + vec2(8.3, 2.8) + t * 0.5));",
+    "  float f = fbm(p + 3.5 * r);",
+    "",
+    "  vec3 bg     = vec3(0.039, 0.039, 0.071); // #0a0a12",
+    "  vec3 violet = vec3(0.545, 0.361, 0.965); // #8b5cf6",
+    "  vec3 cyan   = vec3(0.133, 0.827, 0.933); // #22d3ee",
+    "",
+    "  vec3 color = mix(bg, violet, f * 0.55);",
+    "  color = mix(color, cyan, pow(length(r) * 0.5, 1.4) * 0.32);",
+    "",
+    "  // Radial vignette — brighter toward the center",
+    "  float d = length(uv - 0.5);",
+    "  color *= mix(0.35, 1.0, smoothstep(0.75, 0.0, d));",
+    "",
+    "  // Slight film grain to hide banding",
+    "  float grain = (hash(gl_FragCoord.xy + u_time) - 0.5) * 0.025;",
+    "  color += grain;",
+    "",
+    "  gl_FragColor = vec4(color, 1.0);",
+    "}"
+  ].join("\n");
+
+  function compile(type, src){
+    var s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){
+      console.warn("Shader error:", gl.getShaderInfoLog(s));
+      gl.deleteShader(s);
+      return null;
+    }
+    return s;
+  }
+
+  var vs = compile(gl.VERTEX_SHADER, vsSrc);
+  var fs = compile(gl.FRAGMENT_SHADER, fsSrc);
+  if(!vs || !fs){ canvas.style.display = "none"; return; }
+
+  var prog = gl.createProgram();
+  gl.attachShader(prog, vs);
+  gl.attachShader(prog, fs);
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){
+    console.warn("Program link error:", gl.getProgramInfoLog(prog));
+    canvas.style.display = "none";
+    return;
+  }
+  gl.useProgram(prog);
+
+  var buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+
+  var aPos = gl.getAttribLocation(prog, "a_pos");
+  gl.enableVertexAttribArray(aPos);
+  gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+  var uTime = gl.getUniformLocation(prog, "u_time");
+  var uRes  = gl.getUniformLocation(prog, "u_res");
+
+  var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function resize(){
+    var w = Math.max(1, Math.floor(window.innerWidth  * dpr));
+    var h = Math.max(1, Math.floor(window.innerHeight * dpr));
+    if(canvas.width !== w || canvas.height !== h){
+      canvas.width  = w;
+      canvas.height = h;
+      gl.viewport(0, 0, w, h);
+      gl.uniform2f(uRes, w, h);
+    }
+  }
+  window.addEventListener("resize", resize, {passive:true});
+  resize();
+
+  var start = performance.now();
+  var rafId = 0;
+
+  function frame(now){
+    var t = reducedMotion ? 0 : (now - start) * 0.001;
+    gl.uniform1f(uTime, t);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    if(!reducedMotion) rafId = requestAnimationFrame(frame);
+  }
+  rafId = requestAnimationFrame(frame);
+
+  // Pause when tab is hidden, resume when visible
+  document.addEventListener("visibilitychange", function(){
+    if(document.hidden){
+      cancelAnimationFrame(rafId);
+    } else if(!reducedMotion){
+      start = performance.now() - 1; // resume from ~0
+      rafId = requestAnimationFrame(frame);
+    }
+  });
+})();
+</script>
+</body>
+</html>
